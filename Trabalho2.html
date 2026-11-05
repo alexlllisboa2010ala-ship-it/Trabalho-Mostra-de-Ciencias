@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WoMath — Mulheres na Matemática</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+:root{--wine:#9d183e;--rose:#d94b70;--pink:#f9dfe3;--pale:#fff4f4;--ink:#321523;--muted:#81747a;--line:#f3dce1}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font-family:'DM Sans',Arial,sans-serif}
+a{text-decoration:none;color:inherit}.topbar{height:45px;background:#fce2e6;display:flex;align-items:center;padding:0 22px;gap:9px}.dot{width:14px;height:14px;border-radius:50%;background:#e65b6d}.dot:nth-child(2){background:#f3b84e}.dot:nth-child(3){background:#8ebd76}
+.browser{height:49px;display:flex;align-items:center;gap:22px;padding:0 25px;border-bottom:1px solid #f4e7e9;color:#7a6068;font-size:14px}.lock{color:#a34a62}.url{background:#fff;border:1px solid #f0e4e7;border-radius:22px;padding:9px 18px;flex:1;max-width:900px}
+header{padding:24px 4.5% 0}.brandrow{display:flex;align-items:center;justify-content:space-between;gap:25px}.logo{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:57px;letter-spacing:-3px;color:var(--wine);line-height:1}.logo span{color:#ef8ca0}.tagline{font-size:14px;letter-spacing:5px;color:#9b4d62;margin:6px 0 0 7px}.search{height:48px;border:1px solid #f0d9df;border-radius:28px;background:#fffafa;display:flex;align-items:center;padding:0 22px;gap:14px;width:min(43vw,610px);color:#b05b71}.search input{border:0;outline:0;background:transparent;width:100%;font:inherit;color:var(--ink)}.actions{display:flex;gap:28px;color:var(--wine);align-items:center}.actions span{font-size:30px}.nav{display:flex;gap:clamp(25px,5vw,75px);align-items:center;border-bottom:1px solid var(--line);padding:24px 12px 16px;margin-top:18px;color:#8e344e;font-size:16px}.nav a:first-child{font-weight:700;border-bottom:3px solid var(--wine);padding-bottom:15px;margin-bottom:-18px}
+main{padding:22px 4.3% 50px}.layout{display:grid;grid-template-columns:minmax(0,3.15fr) minmax(270px,1.08fr);gap:27px}.hero{height:320px;border-radius:10px;overflow:hidden;position:relative;background:linear-gradient(105deg,#ffe3e4,#ffd8dc);display:flex;align-items:center;padding:32px 34px}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 83% 20%,#fff6 0 2px,transparent 3px),radial-gradient(circle at 92% 75%,#eaa3ae 0 3px,transparent 4px);pointer-events:none}.hero-copy{position:relative;z-index:2;width:43%;max-width:410px}.pill{display:inline-block;background:#f7b9c7;color:#8f173b;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.3px}.hero h1{font:800 clamp(29px,3vw,43px)/1.04 'Playfair Display',Georgia,serif;color:#821832;margin:9px 0 12px;letter-spacing:-.7px}.hero p{font:19px/1.28 'Playfair Display',Georgia,serif;color:#77364a;margin:0 0 17px}.cta{display:inline-flex;align-items:center;gap:15px;background:linear-gradient(90deg,#c52d59,#a91443);color:white;padding:13px 27px;border-radius:30px;font-weight:700;box-shadow:0 4px 10px #a92b4a22}.hero-art{position:absolute;right:1%;bottom:0;width:57%;height:100%;display:flex;align-items:end;justify-content:center}.hero-art svg{width:100%;height:100%;max-height:320px}.math{position:absolute;color:#d87b91;font:italic 25px 'Playfair Display',serif;opacity:.85}.m1{right:43%;top:17px}.m2{right:10%;top:90px}.m3{left:5%;bottom:60px}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:18px 4px 9px}.section-head h2,.quick h2{font:700 25px 'Playfair Display',Georgia,serif;color:#8f1b3d;margin:0}.section-head h2:before{content:"▦";font-family:Arial;margin-right:15px;color:#a3264b}.section-head a{font-size:14px;color:#8f2947}.news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{border:1px solid #f2e2e5;border-radius:11px;overflow:hidden;box-shadow:0 2px 7px #6b1c3010;background:white;min-width:0}.photo{height:122px;overflow:hidden;position:relative;background:linear-gradient(135deg,#c5d1d5,#eed4cf)}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo.one{background:linear-gradient(130deg,#1d4053,#b2c2c9 50%,#53313b)}.photo.two{background:linear-gradient(130deg,#e6ded2,#9aa9a4 55%,#f0d3bf)}.photo.three{background:linear-gradient(130deg,#b3b4a8,#34454a 60%,#e7c8bd)}.photo svg{width:100%;height:100%}.card-body{padding:0 18px 14px}.tag{display:inline-block;position:relative;margin-top:-13px;background:#f7b8ca;color:#851b3b;border-radius:20px;padding:5px 12px;font-size:11px;font-weight:700}.card h3{font-size:16px;line-height:1.35;font-weight:600;color:#19131a;margin:8px 0}.card p{font-size:14px;line-height:1.4;color:#81777c;margin:0 0 10px}.date{font-size:12px;color:#81777c;display:flex;align-items:center;gap:8px}.date b{font-size:19px;color:#9c3150}
+.quick h2{font:700 22px 'DM Sans',sans-serif;margin: -7px 0 18px}.quick h2:before{content:"★";color:#d34c71;margin-right:13px}.quick-link{display:flex;align-items:center;gap:17px;background:linear-gradient(110deg,#fff0f1,#fde5e8);border-radius:11px;padding:15px 17px;margin-bottom:16px;min-height:96px;color:#7f2944;font-size:16px;line-height:1.35;transition:.2s}.quick-link:hover{transform:translateY(-2px);box-shadow:0 5px 15px #9b1c3b18}.bubble{flex:0 0 62px;height:62px;border-radius:50%;background:#f9cbd4;display:grid;place-items:center;font-size:29px;color:#981c42}.arrow{margin-left:auto;font-size:22px}.quote{background:linear-gradient(120deg,#fff0f1,#fce5e8);border-radius:11px;padding:20px 22px;margin:16px 0;color:#743149}.quote .mark{font:700 48px Georgia;color:#ef9bad;line-height:.6;float:left;margin:4px 12px 0 0}.quote p{font:17px/1.4 'Playfair Display',Georgia,serif;margin:0 0 10px}.quote strong{font-size:14px;font-weight:600}.quote small{display:block;margin:3px 0 0 56px;font-size:11px}.together{background:linear-gradient(110deg,#fff0f1,#fde5e8);border-radius:11px;padding:18px 20px;display:flex;gap:17px;color:#8c2947;align-items:flex-start}.together .heart{font-size:24px;color:#e66e8a}.together strong{font-size:14px}.together p{font-size:12px;line-height:1.45;margin:5px 0 0;color:#92536a}
+footer{border-top:1px solid var(--line);padding:25px 5%;color:#936477;text-align:center;font-size:13px}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.quick h2{grid-column:1/-1;margin:0}.quick-link{margin:0}.quote,.together{margin:0}.hero{height:300px}.nav{gap:25px;overflow:auto;white-space:nowrap}}
+@media(max-width:700px){header{padding:18px 5% 0}.brandrow{flex-wrap:wrap}.logo{font-size:44px}.search{order:3;width:100%;max-width:none}.actions{gap:16px}.nav{font-size:14px;padding-top:18px}.nav a:first-child{padding-bottom:15px}main{padding:16px 4% 35px}.hero{height:auto;min-height:390px;align-items:flex-start;padding:25px 22px}.hero-copy{width:100%;max-width:330px}.hero h1{font-size:34px}.hero p{font-size:17px}.hero-art{width:100%;height:53%;right:-12%;opacity:.65}.hero-copy{z-index:3}.news{grid-template-columns:1fr}.photo{height:180px}.quick{grid-template-columns:1fr}.quick h2{grid-column:auto}.quick-link{min-height:82px}.section-head h2{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="topbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<div class="browser"><span>‹</span><span>›</span><span>↻</span><span class="url"><span class="lock">▣</span> &nbsp; womanwithmathematics.com</span><span>☆</span><span>⋮</span></div>
+<header>
+  <div class="brandrow">
+    <div><div class="logo"><span>Wo</span>Math</div><div class="tagline">woman with Mathematics</div></div>
+    <label class="search"><span style="font-size:24px">⌕</span><input placeholder="O que você está procurando?"></label>
+    <div class="actions"><span title="Perfil">◎</span><span title="Menu">☰</span></div>
+  </div>
+  <nav class="nav"><a href="#">Início</a><a href="#noticias">Notícias</a><a href="#educacao">Educação</a><a href="#carreira">Carreira</a><a href="#inspiracao">Inspiração</a><a href="#recursos">Recursos</a><a href="#sobre">Sobre nós</a></nav>
+</header>
+<main>
+<div class="layout">
+ <div class="main-column">
+  <section class="hero" id="inspiracao">
+   <div class="hero-copy"><span class="pill">INSPIRAÇÃO</span><h1>Mulheres que<br>chegaram longe.</h1><p>Conheça histórias de mulheres que conquistaram cargos de liderança e mostram que a matemática também é delas.</p><a class="cta" href="#noticias">Ver todas as histórias <span>→</span></a></div>
+   <div class="hero-art">
+    <span class="math m1">∫ &nbsp; π</span><span class="math m2">x² + y²</span><span class="math m3">a² + b² = c²</span>
+    <svg viewBox="0 0 620 320" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustração de uma mulher cientista">
+      <g fill="none" stroke="#db8b9d" stroke-width="2" opacity=".55"><path d="M340 48v90h90M340 138l64-53M340 138l77-18"/><path d="M65 240l70-45 40 45zM100 195v45M80 220h75"/><circle cx="520" cy="207" r="35"/><ellipse cx="520" cy="207" rx="15" ry="35"/><path d="M485 207h70M493 188q27 18 54 0M493 226q27-18 54 0"/></g>
+      <g transform="translate(185 12)">
+       <path d="M96 110q-24-68 30-89 53-20 77 26 15 29-2 75l-25 20-78-8z" fill="#55232e"/>
+       <path d="M103 58q-19-36 17-51 42-17 68 15 14 17 5 40-10-22-32-22-27 2-58 18z" fill="#3f1c27"/>
+       <path d="M117 73q4-28 32-35 32-8 48 20l-4 62q-8 37-39 38-31-2-42-36z" fill="#b95e4d"/>
+       <path d="M180 75q14-7 20 4l-9 13-10-3M128 84q9-7 17 0" stroke="#51202a" stroke-width="3" fill="none"/>
+       <path d="M122 135q-10 22-34 32-41 16-57 62l-14 92h330l-20-94q-13-42-64-60l-26-27q-24 23-57 19-34-3-58-24z" fill="#51232f"/>
+       <path d="M122 137q22 27 57 28 31 0 52-26l25 23-43 38-34-18-30 20-50-39z" fill="#f6e5e2"/>
+       <path d="M143 165l-26 35 45 49 21-43 26 43 43-49-28-35-41 25z" fill="#6c2c3a"/>
+       <path d="M149 206l-9 99h105l-18-99-38-18z" fill="#401b29"/>
+       <path d="M158 222l76-8 12 82-84 0z" fill="#28212a" stroke="#d9b7bd" stroke-width="3"/>
+       <path d="M169 229l55-5 8 61-56 0z" fill="#eee4e2"/>
+       <path d="M164 221q-17 12-7 29 8 10 22 3l18-18M225 215q16 7 17 21" fill="none" stroke="#b95e4d" stroke-width="11" stroke-linecap="round"/>
+       <path d="M109 53q-10-22 10-37M100 62q-20-28 5-50M180 18q34 8 35 40" stroke="#3f1c27" stroke-width="12" fill="none" stroke-linecap="round"/>
+      </g>
+    </svg>
+   </div>
+  </section>
+  <div class="section-head" id="noticias"><h2>Últimas notícias</h2><a href="#">Ver todas →</a></div>
+  <section class="news">
+   <article class="card" id="carreira"><div class="photo one"><svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice"><rect width="400" height="140" fill="#233d50"/><path d="M0 0h90v140H0" fill="#526d79"/><path d="M250 0h150v140H250" fill="#b5c4c7"/><ellipse cx="210" cy="54" rx="36" ry="43" fill="#a65f4d"/><path d="M171 54q-5-55 43-55 40 7 31 62l-15-31-50 7z" fill="#221d24"/><path d="M142 140q8-58 68-58 61 0 75 58" fill="#1c2530"/><path d="M190 81l20 22 21-22" fill="#eee"/></svg></div><div class="card-body"><span class="tag">CARREIRA</span><h3>Brasileira lidera projeto da ONU e se torna referência em inteligência artificial</h3><p>Da sala de aula ao cenário internacional: conheça a trajetória de Fernanda Silva.</p><div class="date"><b>▦</b> 12 de outubro de 2025</div></div></article>
+   <article class="card" id="educacao"><div class="photo two"><svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice"><rect width="400" height="140" fill="#d9d6cb"/><rect x="285" y="0" width="115" height="140" fill="#9caeaa"/><rect x="315" y="8" width="28" height="60" rx="4" fill="#d5e4e4"/><ellipse cx="180" cy="48" rx="33" ry="39" fill="#c98b72"/><path d="M145 52q-8-58 43-56 37 7 31 56l-15-30-47 5z" fill="#3a2928"/><path d="M120 140q5-58 61-58 60 0 73 58" fill="#f0efeb"/><path d="M187 88l-28 52h62l-19-52" fill="#fff"/><path d="M225 85l38-18 13 8-41 29" stroke="#282b2b" stroke-width="7" fill="none"/></svg></div><div class="card-body"><span class="tag">EDUCAÇÃO</span><h3>5 escolas públicas e privadas que se destacam no ensino de exatas para meninas</h3><p>Estrutura, projetos e incentivos que fazem a diferença na formação.</p><div class="date"><b>▦</b> 10 de outubro de 2025</div></div></article>
+   <article class="card"><div class="photo three"><svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice"><rect width="400" height="140" fill="#aeb4ae"/><rect x="0" y="0" width="100" height="140" fill="#d0c5b7"/><ellipse cx="230" cy="49" rx="34" ry="40" fill="#a96750"/><path d="M192 50q-8-54 38-56 43 5 39 61l-13-34-52 1z" fill="#241e20"/><circle cx="207" cy="8" r="21" fill="#241e20"/><circle cx="247" cy="5" r="20" fill="#241e20"/><path d="M168 140q4-58 62-58 57 0 74 58" fill="#172a36"/><path d="M210 88l20 28 20-28" fill="#eee"/><path d="M220 115h20v25h-20" fill="#b3c0c3"/></svg></div><div class="card-body"><span class="tag">CONCURSOS</span><h3>Novas regras ampliam vagas para mulheres em concursos públicos federais</h3><p>Mais oportunidades, mais diversidade e um futuro mais igualitário.</p><div class="date"><b>▦</b> 8 de outubro de 2025</div></div></article>
+  </section>
+ </div>
+ <aside class="quick" id="recursos">
+  <h2>Acessos rápidos</h2>
+  <a class="quick-link" href="#"><span class="bubble">👩🏻</span><span>6 escolas que são focadas em ensino de exatas</span><span class="arrow">→</span></a>
+  <a class="quick-link" href="#"><span class="bubble">▤</span><span>Concursos que agora têm mais vagas femininas</span><span class="arrow">→</span></a>
+  <a class="quick-link" href="#"><span class="bubble">🎓</span><span>Dicas para se preparar para o ENEM e outros vestibulares</span><span class="arrow">→</span></a>
+  <div class="quote"><span class="mark">“</span><p>A matemática me deu ferramentas para entender o mundo e acreditar que eu também posso transformá-lo.”</p><strong>— Carolina Araujo</strong><small>Pesquisadora do IMPA</small></div>
+  <div class="together"><span class="heart">♥</span><div><strong>Juntas, somos mais fortes.</strong><p>Mulheres na matemática, na ciência, na educação e em todos os espaços.</p></div></div>
+ </aside>
+</div>
+</main>
+<footer id="sobre">WoMath — Woman with Mathematics &nbsp; • &nbsp; Conhecimento, oportunidades e inspiração para todas.</footer>
+</body>
+</html>
